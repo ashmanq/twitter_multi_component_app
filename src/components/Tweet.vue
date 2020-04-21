@@ -32,8 +32,8 @@ export default {
 
 <style lang="css" scoped>
   img {
-    height: 150px;
-    width:150px;
+    /* height: 200px; */
+    width:200px;
     display:inline-block;
     border-style: solid;
     border-color: #253341;
@@ -50,6 +50,13 @@ export default {
     border-color: #38444d;
     color: #ffffff;
     background-color: #15202b;
+
+    /* I've included this to prevent highlighting text when clicking on */
+    /* the tweets to 'like' them. */
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
   }
   .item {
     /* padding: 30px;
@@ -58,6 +65,7 @@ export default {
     font-size: 1.1em;
     padding-left: 30px;
     font-family: Roboto;
+    width:100%;
 
   }
 
@@ -68,5 +76,23 @@ export default {
 
   .liked {
     background-color: #15202b;
+  }
+
+  @media (max-width: 800px){
+
+    .item {
+      font-size: 1em;
+      padding-left: 10px;
+
+    }
+
+    .row {
+      flex-direction: column;
+      padding: 10px;
+      margin:5px;
+    }
+    img {
+    width:100%;
+    }
   }
 </style>
