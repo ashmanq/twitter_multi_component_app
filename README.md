@@ -1,4 +1,7 @@
-# twitter-multi
+# Twitter Multi Component Vue App
+
+This app was created to demonstrate the use of the Vue Javascript framework, using
+components to create a modular web app.
 
 ## Project setup
 ```
