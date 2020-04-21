@@ -2,7 +2,7 @@
   <section class="container">
 
     <h1>The Totally Not Twit... Tweeting App</h1>
-
+    <img class="logo" src="AngryTweet.png" alt="">
     <div class="list">
 
       <form v-on:submit.prevent="addTweet" class="list" action="index.html" method="post">
@@ -133,8 +133,9 @@ body{
 
 h1 {
   text-align: center;
-  margin: 40px;
-  font-size: 3rem;
+  margin-top: 50px;
+  margin-bottom: 40px;
+  font-size: 2rem;
   color: #1da1f2;
 }
 
@@ -163,6 +164,16 @@ input {
   border-style: solid;
   border-color: #15202b;
   border-radius: 5px;
+}
+
+.logo {
+  width:100px;
+  margin-bottom: 40px;
+  background-color: lightblue;
+  border-style: solid;
+  border-width: 8px;
+  border-color: #197fbf;
+  border-radius: 200px;
 }
 
 .btn {
