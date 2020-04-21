@@ -166,6 +166,10 @@ input {
   border-radius: 5px;
 }
 
+input[type=submit] {
+    -webkit-appearance: none;
+}
+
 .logo {
   width:100px;
   margin-bottom: 40px;
