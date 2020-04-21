@@ -13,12 +13,13 @@
         <label for="tweet">Tweet</label>
         <input type="text" name="tweet" v-model:value="newTweet.tweet" autocomplete="off" required>
         <input class="btn" type="submit" name="submit" value="Add Tweet">
-        <button type="button" class="btn" v-on:click="filterTweets" name="filter" >View Liked Tweets</button>
+        <button type="button" class="btn" v-on:click="filterflag" name="filter" >{{ filterBtnText }}</button>
+        <p>Total Likes: {{ totalLikes }}</p>
       </form>
     </div>
     <div class="list">
 
-      <twitter-tweet v-for="(tweet,index) in tweets" :key="index" :tweet="tweet">
+      <twitter-tweet v-for="(tweet) in filteredTweets" :tweet="tweet">
       </twitter-tweet>
 
     </div>
@@ -65,7 +66,19 @@ export default {
         img: 'https://semantic-ui.com/images/avatar2/large/matthew.png',
         tweet: "",
         likes: 0
-      }
+      },
+      filteredAmount: 0,
+      filterBtnText: "Filter Popular"
+    }
+  },
+  computed: {
+    totalLikes: function() {
+      return this.filteredTweets.reduce((total, tweet) => total + tweet.likes, 0);
+    },
+    filteredTweets: function() {
+      return this.tweets.filter((tweet) => {
+        return tweet.likes >= this.filteredAmount;
+      })
     }
   },
   methods: {
@@ -88,14 +101,17 @@ export default {
         tweet: "",
         likes: 0
       };
-    }
-  },
-  methods: {
-    filterTweets: function() {
-      const likedTweets = this.tweets.filter((tweet) => {
-        return tweet.likes > 10;
-      });
-      console.log(likedTweets);
+    },
+    // Method to switch between filtered and non filtered lists
+    // of tweets
+    filterflag: function () {
+      if (this.filteredAmount == 0) {
+        this.filteredAmount = 11;
+        this.filterBtnText = "Show All"
+      } else {
+        this.filteredAmount = 0;
+        this.filterBtnText = "Filter Popular"
+      }
     }
   },
   components: {
@@ -123,7 +139,6 @@ h1 {
 }
 
 form {
-  /* width:300px; */
   font-size: 1.2rem;
   text-align: center;
   border-style: solid;

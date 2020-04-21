@@ -5,7 +5,7 @@
         <h2>{{ tweet.handle }}</h2>
         <p>{{ tweet.tweet }}</p>
         <p>{{ tweet.name }}</p>
-        <p> ❤️ {{ tweet.likes }}</p>
+        <p class="likes"> ❤️ {{ tweet.likes }}</p>
       </div>
   </div>
 </template>
@@ -78,6 +78,10 @@ export default {
     background-color: #15202b;
   }
 
+  .likes {
+    font-size: 1.5em;
+  }
+
   @media (max-width: 800px){
 
     .item {
@@ -90,6 +94,9 @@ export default {
       flex-direction: column;
       padding: 10px;
       margin:5px;
+    }
+    .likes {
+      text-align: center;
     }
     img {
     width:100%;
