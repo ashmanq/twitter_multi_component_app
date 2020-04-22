@@ -170,12 +170,9 @@ input[type=submit] {
 }
 
 .logo {
-  width:100px;
+  width:200px;
   margin-bottom: 40px;
   background-color: lightblue;
-  border-style: solid;
-  border-width: 8px;
-  border-color: #197fbf;
   border-radius: 200px;
 }
 
