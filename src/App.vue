@@ -124,9 +124,9 @@ export default {
 <!-- I've created this unscoped style to colour the background
 all one colour -->
 <style media="screen">
-body{
+/* body{
   background-color: #15202b;
-}
+} */
 </style>
 <style lang="css" scoped>
 
