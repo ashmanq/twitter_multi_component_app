@@ -11,7 +11,7 @@
         <label for="handle">Handle</label>
         <input type="text" name="handle" v-model:value="newTweet.handle" required>
         <label for="tweet">Tweet</label>
-        <input type="text" name="tweet" v-model:value="newTweet.tweet" autocomplete="off" required>
+        <textarea rows="4" cols="30" name="tweet" v-model:value="newTweet.tweet" autocomplete="off" required></textarea>
         <input class="btn" type="submit" name="submit" value="Add Tweet">
         <button type="button" class="btn" v-on:click="filterflag" name="filter" >{{ filterBtnText }}</button>
         <p>Total Likes: {{ totalLikes }}</p>
@@ -121,13 +121,7 @@ export default {
 
 
 </script>
-<!-- I've created this unscoped style to colour the background
-all one colour -->
-<style media="screen">
-/* body{
-  background-color: #15202b;
-} */
-</style>
+
 <style lang="css" scoped>
 
 
@@ -156,15 +150,20 @@ label {
 
 }
 
-input {
+input, textarea {
   font-size: 1.2rem;
-  text-align: center;
+  /* text-align: center; */
   padding:10px;
   margin-bottom: 20px;
   border-style: solid;
   border-color: #15202b;
   border-radius: 5px;
 }
+
+input {
+  text-align: center;
+}
+
 
 input[type=submit] {
     -webkit-appearance: none;
