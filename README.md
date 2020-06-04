@@ -1,5 +1,5 @@
 <p align="center">
-  <image width=300px src="https://github.com/ashmanq/twitter_multi_component_app/blob/master/public/AngryTweet.png">
+  <image width=300px src="/public/AngryTweet.png">
 </p>
   
 
@@ -22,7 +22,7 @@ components to create a modular web app.
 
 
 <p align="center">
-  <image src="https://github.com/ashmanq/twitter_multi_component_app/blob/master/screenshots/twitterApp.png">
+  <image src="/screenshots/twitterApp.png">
 </p>
 
 
